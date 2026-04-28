@@ -78,9 +78,10 @@ Data::Path::XS - Fast path-based access to nested data structures
 
     # Pre-compiled paths for hot loops
     use Data::Path::XS qw(path_compile pathc_get);
-    my $cp = path_compile('/foo/bar/1');
-    pathc_get($data, $cp);
-    pathc_get($other,  $cp);                  # reuse across data
+    my $cp    = path_compile('/foo/bar/1');
+    my $other = { foo => { bar => [4, 5, 6] } };
+    pathc_get($data,  $cp);                   # 42
+    pathc_get($other, $cp);                   # 5 — reuse across data
 
     # Keyword syntax (compile-time optimized)
     use Data::Path::XS ':keywords';
