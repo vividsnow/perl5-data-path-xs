@@ -18,4 +18,7 @@ t/kw-pathexists.t
 t/kw-pathget.t
 t/kw-pathset.t
 t/leaks.t
+t/numeric-hash-keys.t
 t/stress.t
+t/tied-and-validation.t
+t/utf8-keys.t
